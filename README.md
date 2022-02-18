@@ -678,3 +678,225 @@ String input = "Cricket!";
 System.out.println(input.toUpperCase()); // Prints: "CRICKET!"
 System.out.println(input.toLowerCase()); // Prints: "cricket!"
 ```
+
+## Arrays
+
+**Creating a Populated Array**
+To declare an array, state the data type of the array followed by square brackets [] and the array name:
+
+``` java
+// Array of ints:
+int[] lottoNumbers;
+
+// Array of Strings:
+String[] clothingItems;
+```
+
+To declare a populated array, the values must be contained within curly brackets ({}) and separated by commas:
+
+``` java
+// Array of ints:
+int[] lottoNumbers = {12, 29, 4, 38, 3};
+
+// Array of Strings:
+String[] clothingItems = {"Huipil", "Beanie", "Kimono", "Sari"};
+```
+
+**Accessing an Element by Index**
+To access an individual element, state the array name followed by the index of the array element contained within brackets:
+
+``` java
+String[] clothingItems = {"Huipil", "Beanie", "Kimono", "Sari"};
+System.out.println(clothingItems[2]); // Prints: Kimono
+```
+
+> Note that indexing in Java always starts at 0.
+
+**Changing an Element’s Value**
+To change a value, select the element via its index and use the assignment operator to set a new value:
+
+``` java
+arrayName[index] = newValue;
+```
+
+For example:
+
+``` java
+String[] clothingItems = {"Huipil", "Beanie", "Kimono", "Sari"};
+
+// Change element value:
+clothingItems[1] = "Sweater";
+System.out.println(clothingItems[1]); // Prints: Sweater
+```
+
+**Creating an Empty Array**
+Arrays can be declared as empty and populated at a later time. To declare an empty array, use the following formula:
+
+``` text
+dataType[] emptyArrayName = new dataType[number of elements in array];
+```
+
+An empty array must be declared with the number of elements it will contain. To populate an empty array, set the index of an element to a value:
+
+``` java
+String[] menuItems = new String[5];
+
+menuItems[0] = "Grilled Chicken Fajita";
+menuItems[1] = "Fried Plantains";
+menuItems[2] = "Black Bean Taco";
+menuItems[3] = "Chili Nachos";
+menuItems[4] = "Chorizo Burrito";
+```
+
+**Getting Array Length**
+To find the number of items in a single array, append `.length` to the array name:
+
+``` java
+int[] lottoNumbers = {12, 29, 4, 38, 3};
+System.out.println(lottoNumbers.length); // Prints: 5
+```
+
+**Traversing Through an Array**  
+*for loops*  
+To traverse an array, use a for loop to iterate from 0 to one less than the length of the array. Inside the loop, use the loop control variable to access the element at the current index:
+
+``` java
+int[] lottoNumbers = {12, 29, 4, 38, 3};
+for (int i = 0; i < lottoNumbers.length; i++) {
+  // Output the current index value:
+  System.out.println(lottoNumbers[i]);
+}
+/*
+Prints:
+12
+29
+4
+38
+3
+*/
+```
+
+*for-each loops*  
+Another option for traversing an array is using a for-each loop:
+
+``` java
+int[] lottoNumbers = {12, 29, 4, 38, 3};
+for (int num: lottoNumbers) {
+  System.out.println(num);
+}
+/*
+Prints:
+12
+29
+4
+38
+3
+*/
+```
+
+## 2D Arrays
+
+**Creating a Populated 2D Array**
+To declare a 2D array, state the data type of the arrays it will hold followed by two square brackets and the 2D array’s name:
+
+``` java
+// 2D int array
+int[][] nums;
+```
+
+To declare and populate a 2D array using one line of code, place each individual array within curly brackets and separate them using commas:
+
+``` java
+int[][] nums = {{10, 9, 8}, {7, 6, 5}, {4, 3, 2}};
+```
+
+**Accessing an Element in a 2D Array**
+To access an individual element in a 2D array, state the array name followed by two square brackets:
+
+- The first bracket should hold the index of the individual array the element exists in.
+- The second bracket should store the index of the element within that individual array.
+
+``` java
+int[][] nums = {{10, 9, 8}, {7, 6, 5}, {4, 3, 2}};
+// Within the first array, access the second element:
+System.out.println(nums[0][1]); // Prints: 9
+```
+
+**Updating a 2D Array Element**
+To update an element’s value, select the element via its index and use the assignment operator to set a new value:
+
+``` java
+char[][] letters = {{'A', 'a'}, {'B', 'x'}, {'C', 'c'}};
+
+// Update the value:
+letters[1][1] = 'b';
+System.out.println(letters[1][1]); // Prints: b
+```
+
+**Creating an Empty 2D Array**
+To create an empty 2D array, we must specify the data type, the number of arrays the 2D array will contain, and the number of elements that will be contained within each individual array:
+
+``` java
+// This will create an int array with 2 arrays containing 3 elements each:
+int[][] intArray = new int[2][3];
+```
+
+To populate an empty array, select the index of an element and use the assignment operator to set a value:
+
+``` java
+int[][] intArray = new int[2][3];
+
+intArray[0][0] = 1;
+intArray[0][1] = 2;
+intArray[0][2] = 4;
+intArray[1][0] = 1;
+intArray[1][1] = 3;
+intArray[1][2] = 6;
+```
+
+**Traversing Through a 2D Array**
+When traversing through a 2D array, we can iterate using row-major order or column-row order.
+
+*Row-Major Order*  
+Row-major order for 2D arrays refers to a traversal path that moves horizontally through each row starting at the first row and ending with the last.
+
+![Diagram of row-major order](https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/row_major.png)
+
+To iterate through a 2D array using row-major order, create a nested for loop.
+
+- The outer loop will iterate from 0 to the length of the 2D array minus 1.
+- The nested loop will iterate from 0 to the length of one of the nested arrays minus 1.
+- Access the individual element by placing the outer loop’s control variable in the first bracket while placing the inner loop’s control variable in the second bracket:
+
+``` java
+char[][] letters = {{'A', 'a'}, {'B', 'b'}, {'C', 'c'}};
+
+for (int i = 0; i < letters.length; i++){
+  for (int j = 0; j < letters[0].length; j++){
+    System.out.print(letters[i][j]);
+  }
+}
+// Prints: AaBbCc
+```
+
+*Column-Row Order*  
+Column-major order for 2D arrays refers to a traversal path which moves vertically down each column starting at the first column and ending with the last.
+
+![Diagram of column-major order](https://static-assets.codecademy.com/Paths/ap-computer-science/TwoDArrays/column_major.png)
+
+To iterate through a 2D array using row-major order, create a nested for loop.
+
+- The outer loop will iterate from 0 to the length of one of the nested arrays minus 1.
+- The nested loop will iterate from 0 to the length of the 2D array minus 1.
+- Access the individual element by placing the inner loop’s control variable in the first bracket while placing the outer loop’s control variable in the second bracket:
+
+``` java
+char[][] letters = {{'A', 'a'}, {'B', 'b'}, {'C', 'c'}};
+
+for (int i = 0; i < letters[0].length; i++){
+  for (int j = 0; j < letters.length; j++){
+    System.out.print(letters[j][i]);
+  }
+}
+// Prints: ABCabc
+```
