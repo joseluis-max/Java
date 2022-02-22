@@ -1,5 +1,29 @@
 # Java
 
+- [Java](#java)
+  - [Naming Convetions](#naming-convetions)
+  - [Brackets and Parentheses](#brackets-and-parentheses)
+  - [Indentations and Spacing](#indentations-and-spacing)
+  - [Java and the Command Line](#java-and-the-command-line)
+  - [Hello World and Class Structure](#hello-world-and-class-structure)
+  - [Print Stataments and Comments](#print-stataments-and-comments)
+  - [Variables and types](#variables-and-types)
+  - [Conditional Statements and Comparison Operators](#conditional-statements-and-comparison-operators)
+  - [Loops](#loops)
+  - [User-Defined Methods](#user-defined-methods)
+  - [String Methods](#string-methods)
+  - [Arrays](#arrays)
+  - [2D Arrays](#2d-arrays)
+  - [Classes and Constructors](#classes-and-constructors)
+  - [Object State and Behavior](#object-state-and-behavior)
+  - [Getter and Setter Methods](#getter-and-setter-methods)
+  - [Scope](#scope)
+  - [Inheritance](#inheritance)
+  - [Polymorphism](#polymorphism)
+  - [Built-In Data Structures](#built-in-data-structures)
+  - [HashMaps](#hashmaps)
+  - [Sets](#sets)
+
 ## Naming Convetions
 
 Java use `camelCase` for most names, including variables and methods.
